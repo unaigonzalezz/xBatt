@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xBatt Property Inspector</title>
+    <link rel="stylesheet" href="css/sdpi.css">
+    <link rel="stylesheet" href="css/property-inspector.css">
+    <style>
+        .sdpi-wrapper {
+            padding: 20px;
+        }
+
+        .sdpi-item {
+            margin-bottom: 20px;
+        }
+
+        .sdpi-item-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .sdpi-item-value {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+            .action-item img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .action-item .description {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+        .error-message {
+            color: red;
+            display: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <h3>Settings</h3>
+        <div class="sdpi-item" id="counter_value">
+            <div class="sdpi-item-label">Controller number (1-4)</div>
+            <input id="controllerValue" class="sdpi-item-value" type="number" min="1" max="4" placeholder="Enter controller number" onchange="setSettings(event.target.value, 'ControllerNumber')" />
+        </div>
+        <div id="error-message" class="error-message">
+            Please select a valid controller number (1-4).
+        </div>
+        <details class="message">
+            <summary>For feedback/suggestions contact me at <a class="linkspan" onclick="openWebsite()">https://unaigonzalez.es</a></summary>
+        </details>
+        <h3>Explanations</h3>
+        <div class="actions">
+            <div class="action-item">
+                <img src="../images/icons/battery_disconnected.png" alt="Battery Disconnected" />
+                <div class="description">Battery Disconnected: The controller is not connected or has no battery.</div>
+            </div>
+            <div class="action-item">
+                <img src="../images/icons/battery_unknown.png" alt="Battery Unknown" />
+                <div class="description">Battery Unknown: The battery status is unknown.</div>
+            </div>
+            <div class="action-item">
+                <img src="../images/icons/battery_wired.png" alt="Battery Wired" />
+                <div class="description">Battery Wired: The controller is connected via USB.</div>
+            </div>
+            <div class="action-item">
+                <img src="../images/icons/controller_invalid.png" alt="Controller Invalid" />
+                <div class="description">Controller Invalid: The selected controller number is invalid or not detected.</div>
+            </div>
+            <div class="action-item">
+                <img src="../images/icons/battery_empty.png" alt="Controller Status" />
+                <div class="description">Controller Battery is empty, charge it!</div>
+            </div>
+            <div class="action-item">
+                <img src="../images/icons/battery_low.png" alt="Controller Status" />
+                <div class="description">Controller Battery is low.</div>
+            </div>
+            <div class="action-item">
+                <img src="../images/icons/battery_medium.png" alt="Controller Status" />
+                <div class="description">Controller Battery is medium.</div>
+            </div>
+            <div class="action-item">
+                <img src="../images/icons/battery_full.png" alt="Controller Status" />
+                <div class="description">Controller Battery is full, time to play!</div>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/property-inspector.js"></script>
+</body>
+</html>

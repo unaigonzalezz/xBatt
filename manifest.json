@@ -1,0 +1,42 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/actionIcon",
+      "Name": "xBatt Indicator",
+      "States": [
+        {
+          "Image": "images/actionDefaultImage",
+          "TitleAlignment": "bottom",
+          "FontSize": "9",
+          "FontFamily": "Arial Black"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "Tooltip": "Display battery level of a XBOX controller",
+      "UUID": "com.unaigonzalez.xbatt.checkBatt"
+    }
+  ],
+  "Category": "xBatt",
+  "CategoryIcon": "images/category/categoryIcon",
+  "Disabled": false,
+  "Author": "Unai Gonzalez",
+  "CodePathWin": "xbatt_deck.exe",
+  "CodePathMac": "xbatt_deck",
+  "PropertyInspectorPath": "property_inspector/property_inspector.html",
+  "Description": "xBatt lets you check your Xbox controller's battery right from your Streamdeck. Get quick, real-time updates so you always know when it's time to recharge.",
+  "Name": "xBatt",
+  "Icon": "images/pluginIcon",
+  "URL": "https://www.unaigonzalez.es",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "4.1"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ]
+}
