@@ -42,7 +42,7 @@ Made with ❤️ by Unai González.
 
 ## Download
 
-Download the latest version on Stream Deck Marketplace
+Download the latest version on Stream Deck Marketplace or on the [Releases Page](https://github.com/unaigonzalezz/xBatt/releases/tag/xBatt) 
 
 ## Support
 
