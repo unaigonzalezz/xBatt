@@ -1,42 +1,90 @@
 {
-  "Actions": [
-    {
-      "Icon": "images/actionIcon",
-      "Name": "xBatt Indicator",
-      "States": [
+    "UUID": "com.unaigonzalez.xbatt.ch",
+    "CodePath": "xbatt_deck.exe",
+    "Actions": [
         {
-          "Image": "images/actionDefaultImage",
-          "TitleAlignment": "bottom",
-          "FontSize": "9",
-          "FontFamily": "Arial Black"
+            "Icon": "images/actions/batteryIndicator",
+            "Name": "xBatt Indicator",
+            "States": [
+                {
+                    "Image": "images/actionDefaultImage",
+                    "TitleAlignment": "bottom",
+                    "FontSize": 9,
+                    "FontFamily": "Arial Black"
+                }
+            ],
+            "SupportedInMultiActions": false,
+            "UserTitleEnabled": false,
+            "Tooltip": "Displays the current battery level of a connected Xbox controller.",
+            "UUID": "com.unaigonzalez.xbatt.check-batt"
+        },
+        {
+            "Icon": "images/actions/buttonsIndicator",
+            "Name": "xBatt Buttons",
+            "States": [
+                {
+                    "Image": "images/actionDefaultImage",
+                    "TitleAlignment": "bottom",
+                    "FontSize": 9,
+                    "FontFamily": "Arial Black"
+                }
+            ],
+            "SupportedInMultiActions": false,
+            "UserTitleEnabled": false,
+            "Tooltip": "Shows which buttons are currently pressed on a connected Xbox controller.",
+            "UUID": "com.unaigonzalez.xbatt.pressed-buttons"
+        },
+        {
+            "Icon": "images/actions/vibrationIndicator",
+            "Name": "xBatt Vibrate",
+            "States": [
+                {
+                    "Image": "images/actionDefaultImage",
+                    "TitleAlignment": "bottom",
+                    "FontSize": 9,
+                    "FontFamily": "Arial Black"
+                }
+            ],
+            "SupportedInMultiActions": false,
+            "UserTitleEnabled": false,
+            "Tooltip": "Activates the vibration feature on the selected Xbox controller.",
+            "UUID": "com.unaigonzalez.xbatt.vibrate"
+        },
+        {
+            "Icon": "images/actions/controllersIndicator",
+            "Name": "xBatt Controllers",
+            "States": [
+                {
+                    "Image": "images/actionDefaultImage",
+                    "TitleAlignment": "bottom",
+                    "FontSize": 9,
+                    "FontFamily": "Arial Black"
+                }
+            ],
+            "SupportedInMultiActions": false,
+            "UserTitleEnabled": false,
+            "Tooltip": "Displays the total number of Xbox controllers currently connected to the system.",
+            "UUID": "com.unaigonzalez.xbatt.connected-controllers"
         }
-      ],
-      "SupportedInMultiActions": false,
-      "UserTitleEnabled": false,
-      "Tooltip": "Display battery level of a XBOX controller",
-      "UUID": "com.unaigonzalez.xbatt.checkBatt"
-    }
-  ],
-  "Category": "xBatt",
-  "CategoryIcon": "images/category/categoryIcon",
-  "Disabled": false,
-  "Author": "Unai Gonzalez",
-  "CodePathWin": "xbatt_deck.exe",
-  "CodePathMac": "xbatt_deck",
-  "PropertyInspectorPath": "property_inspector/property_inspector.html",
-  "Description": "xBatt lets you check your Xbox controller's battery right from your Streamdeck. Get quick, real-time updates so you always know when it's time to recharge.",
-  "Name": "xBatt",
-  "Icon": "images/pluginIcon",
-  "URL": "https://www.unaigonzalez.es",
-  "Version": "1.0",
-  "SDKVersion": 2,
-  "Software": {
-    "MinimumVersion": "4.1"
-  },
-  "OS": [
-    {
-      "Platform": "windows",
-      "MinimumVersion": "10"
-    }
-  ]
+    ],
+    "Category": "xBatt",
+    "CategoryIcon": "images/category/categoryIcon",
+    "Author": "Unai Gonzalez",
+    "CodePathWin": "xbatt_deck.exe",
+    "PropertyInspectorPath": "property_inspector/property_inspector.html",
+    "Description": "xBatt lets you monitor your Xbox controllers directly from Stream Deck. Check battery levels in real-time, see which buttons are pressed, activate vibration, and view the number of connected controllers, all from a fast and easy-to-use interface.",
+    "Name": "xBatt",
+    "Icon": "images/pluginIcon",
+    "URL": "https://www.unaigonzalez.es",
+    "Version": "1.1.0.0",
+    "SDKVersion": 2,
+    "Software": {
+        "MinimumVersion": "6.4"
+    },
+    "OS": [
+        {
+            "Platform": "windows",
+            "MinimumVersion": "10"
+        }
+    ]
 }
