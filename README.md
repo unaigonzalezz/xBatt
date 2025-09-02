@@ -1,68 +1,90 @@
-
 <h1 align="center">
   <br>
-  <a><img src="https://i.postimg.cc/L6j8hKKk/xbatt.png" alt="XBatt Logo" height="100px" ></a>
+  <a><img src="https://i.postimg.cc/L6j8hKKk/xbatt.png" alt="XBatt Logo" height="100px"></a>
 </h1>
-<h3 align="center">Display your XInput and XBOX Controller battery status on your Stream Deck!</h3>
+<h3 align="center">Monitor your Xbox (XInput) controllers directly from your Stream Deck!</h3>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
- <a href="#requeriments">Requeriments</a> •
+  <a href="#requirements">Requirements</a> •
   <a href="#download">Download</a> •
   <a href="#support">Support</a> •
-  <a href="#support">Contributing</a> •
+  <a href="#contributing">Contributing</a> •
   <a href="#thanks">Thanks</a> •
   <a href="#license">License</a>
 </p>
 
 <h1 align="center">
   <br>
-  <img src="https://i.postimg.cc/SNPfQ94Y/Actions.png" alt="XBatt Actions" ></a>
+  <img src="https://i.postimg.cc/SNPfQ94Y/Actions.png" alt="XBatt Actions">
 </h1>
 
-This StreamDeck plugin made in C# provides real-time information about the battery status of any XInput controller, including original XBOX controllers. It shows the controller number and battery condition, which can be disconnected, unknown, or wired.
+**xBatt** is a Stream Deck plugin written in C# that provides real-time information about your Xbox controllers through XInput.  
+It lets you check battery levels, see which buttons are pressed, activate vibration, and monitor how many controllers are connected — all without leaving your Stream Deck.
 
+---
 
 ## Key Features
 
--   Supports up to 4 Xbox controllers: Monitor the battery status for each of up to four connected Xbox controllers.
--   Displays four battery levels: Shows battery status with four levels—Empty, Low, Medium, and Full—providing detailed information on each   controller's power.
--   Customizable battery display: When a controller is disconnected, choose which controller's battery status you want to display, ensuring you always have the information you need.
--   Press the button to refresh the status of a specific controller.
+- **Supports up to 4 Xbox controllers**: Monitor each controller individually.  
+- **Battery status**: Displays battery as *Empty, Low, Medium,* or *Full*.  
+- **Customizable battery display**: Choose which controller to show when disconnected.  
+- **Controller actions**:  
+  - 🔋 **xBatt Indicator** → Battery status of the selected controller.  
+  - 🎮 **xBatt Buttons** → Shows pressed buttons in real-time.  
+  - 💥 **xBatt Vibrate** → Trigger vibration on the selected controller.  
+  - 👥 **xBatt Controllers** → See how many controllers are currently connected.  
+- **Quick refresh**: Press the action to update controller info instantly.  
 
-This plugin is intended to use the official XBOX PC Dongle, Bluetooth Dongles or controllers may won't work accordingly due how XInput works.
+⚠️ Works best with the **official Xbox Wireless Dongle for PC**. Some Bluetooth adapters/controllers may not behave correctly due to XInput limitations.  
 
-Made with ❤️ by Unai González.
+Made with ❤️ by **Unai González**.
 
-## Requeriments
+---
 
-- Windows 10 or later operating system
-- Stream Deck 6.7 or later
-- NET Framework 6.0
+## Requirements
+
+- Windows 10 or later  
+- Stream Deck 6.7 or later  
+- .NET 6.0 Runtime  
+
+---
 
 ## Download
 
-Download the latest version on Stream Deck Marketplace or on the [Releases Page](https://github.com/unaigonzalezz/xBatt/releases/tag/xBatt) 
+👉 Get the latest release on the [Stream Deck Marketplace](https://apps.elgato.com/plugins)  
+or from the [GitHub Releases Page](https://github.com/unaigonzalezz/xBatt/releases/tag/xBatt).
+
+---
 
 ## Support
 
-<a href="https://www.buymeacoffee.com/unaiitxuu" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+If you’d like to support development:  
 
-<a href="https://ko-fi.com/unaigonzalez">
-    <img src="https://user-images.githubusercontent.com/7586345/125668092-55af2a45-aa7d-4795-93ed-de0a9a2828c5.png" width="160">
+<a href="https://www.buymeacoffee.com/unaiitxuu" target="_blank">
+  <img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" height="41">
 </a>
 
+<a href="https://ko-fi.com/unaigonzalez" target="_blank">
+  <img src="https://user-images.githubusercontent.com/7586345/125668092-55af2a45-aa7d-4795-93ed-de0a9a2828c5.png" width="160">
+</a>
+
+---
+
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to improve.  
+
+---
 
 ## Thanks
 
-- Stream Deck Toolkit for creating such an incredible template! - https://github.com/FritzAndFriends/StreamDeckToolkit
-- SharpDX Direct Input for creating all the controller logic - https://www.nuget.org/packages/SharpDX.DirectInput
+- [Stream Deck Toolkit](https://github.com/FritzAndFriends/StreamDeckToolkit) for the amazing template.  
+- [SharpDX DirectInput](https://www.nuget.org/packages/SharpDX.DirectInput) for controller logic.  
+- [Nicolae (Xelu)](https://thoseawesomeguys.com/prompts/) for creating such an incredible set of button icons.
+
+---
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-
-

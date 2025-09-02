@@ -10,8 +10,8 @@ using System.Timers;
 
 namespace xbatt_deck
 {
-    [ActionUuid(Uuid = "com.unaigonzalez.xBatt.checkBatt")]
-    public class xBattAction : BaseStreamDeckActionWithSettingsModel<Models.xBattModel>
+    [ActionUuid(Uuid = "com.unaigonzalez.xBatt.check-batt")]
+    public class xBattCheckBatt : BaseStreamDeckActionWithSettingsModel<Models.xBattModel>
     {
         private Controller _controller;
         private System.Timers.Timer _updateTimer;
@@ -20,14 +20,12 @@ namespace xbatt_deck
         public override async Task OnWillAppear(StreamDeckEventPayload args)
         {
             _cts = new CancellationTokenSource();
-            _updateTimer = new System.Timers.Timer(1000); // Update status every 1 sec
+            _updateTimer = new System.Timers.Timer(1000);
             _updateTimer.Elapsed += async (sender, e) => await UpdateStatusAsync(args.context, _cts.Token);
             _updateTimer.Start();
 
-            // Initialize controller status
             GetController(SettingsModel.ControllerNumber);
 
-            // Establish controller status
             await UpdateStatusAsync(args.context, _cts.Token);
 
             await base.OnWillAppear(args);
@@ -37,21 +35,16 @@ namespace xbatt_deck
         {
             if (token.IsCancellationRequested) return;
 
-            // Obtain selected controller
             GetController(SettingsModel.ControllerNumber);
 
-            // Obtain status (status, icon, number)
             var (batteryStatus, iconPath, controllerNumber) = GetBatteryStatus();
 
-            // Verify controller status
             if (_controller != null && _controller.IsConnected)
             {
-                // Show controller number
-                if (batteryStatus != "Controller disconnected" || iconPath != "Images/Icons/battery_disconnected.png")
+                if (batteryStatus != "Controller disconnected" || iconPath != "images/Icons/battery_disconnected.png")
                 {
                     await Manager.SetTitleAsync(context, $"    {controllerNumber}");
 
-                    // Update tile icon
                     if (!string.IsNullOrEmpty(iconPath) && File.Exists(iconPath))
                     {
                         try
@@ -67,9 +60,8 @@ namespace xbatt_deck
             }
             else
             {
-                // Show if the controller is disconnected
                 await Manager.SetTitleAsync(context, "");
-                await Manager.SetImageAsync(context, "Images/Icons/battery_disconnected.png");
+                await Manager.SetImageAsync(context, "images/Icons/battery_disconnected.png");
             }
         }
 
@@ -82,7 +74,6 @@ namespace xbatt_deck
 
         public override async Task OnWillDisappear(StreamDeckEventPayload args)
         {
-            // Stop counter and process
             _updateTimer?.Stop();
             _cts?.Cancel();
             _updateTimer?.Dispose();
@@ -92,7 +83,6 @@ namespace xbatt_deck
 
         private void GetController(int controllerNumber)
         {
-            // Create controllers instance
             var controllers = new[]
             {
                 new Controller(UserIndex.One),
@@ -100,14 +90,14 @@ namespace xbatt_deck
                 new Controller(UserIndex.Three),
                 new Controller(UserIndex.Four)
             };
-            _controller = controllers.ElementAtOrDefault(controllerNumber - 1); // userindex starts on 0
+            _controller = controllers.ElementAtOrDefault(controllerNumber - 1);
         }
 
         private (string batteryStatus, string iconPath, int controllerNumber) GetBatteryStatus()
         {
             if (_controller == null || !_controller.IsConnected)
             {
-                return ("Controller disconnected", "Images/Icons/battery_disconnected.png", SettingsModel.ControllerNumber);
+                return ("Controller disconnected", "images/Icons/battery_disconnected.png", SettingsModel.ControllerNumber);
             }
 
             var batteryInfo = _controller.GetBatteryInformation(BatteryDeviceType.Gamepad);
@@ -119,42 +109,41 @@ namespace xbatt_deck
             {
                 // USB Status
                 batteryStatus = "Controller wired";
-                iconPath = "Images/Icons/battery_wired.png";
+                iconPath = "images/Icons/battery_wired.png";
             }
             else if (batteryInfo.BatteryType == BatteryType.Disconnected)
             {
                 batteryStatus = "Controller disconnected";
-                iconPath = "Images/Icons/battery_disconnected.png";
+                iconPath = "images/Icons/battery_disconnected.png";
             }
             else if (batteryInfo.BatteryType == BatteryType.Unknown)
             {
                 batteryStatus = "Unknown battery status";
-                iconPath = "Images/Icons/battery_unknown.png";
+                iconPath = "images/Icons/battery_unknown.png";
             }
             else
             {
-                // Show battery status
                 switch (batteryInfo.BatteryLevel)
                 {
                     case BatteryLevel.Empty:
                         batteryStatus = "Battery: Empty";
-                        iconPath = "Images/Icons/battery_empty.png";
+                        iconPath = "images/Icons/battery_empty.png";
                         break;
                     case BatteryLevel.Low:
                         batteryStatus = "Battery: Low";
-                        iconPath = "Images/Icons/battery_low.png";
+                        iconPath = "images/Icons/battery_low.png";
                         break;
                     case BatteryLevel.Medium:
                         batteryStatus = "Battery: Medium";
-                        iconPath = "Images/Icons/battery_medium.png";
+                        iconPath = "images/Icons/battery_medium.png";
                         break;
                     case BatteryLevel.Full:
                         batteryStatus = "Battery: Full";
-                        iconPath = "Images/Icons/battery_full.png";
+                        iconPath = "images/Icons/battery_full.png";
                         break;
                     default:
                         batteryStatus = "Unknown battery level";
-                        iconPath = "Images/Icons/battery_unknown.png";
+                        iconPath = "images/Icons/battery_unknown.png";
                         break;
                 }
             }

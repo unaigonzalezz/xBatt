@@ -56,7 +56,6 @@
 </head>
 <body>
     <div class="sdpi-wrapper">
-        <h3>Settings</h3>
         <div class="sdpi-item" id="counter_value">
             <div class="sdpi-item-label">Controller number (1-4)</div>
             <input id="controllerValue" class="sdpi-item-value" type="number" min="1" max="4" placeholder="Enter controller number" onchange="setSettings(event.target.value, 'ControllerNumber')" />
@@ -64,44 +63,15 @@
         <div id="error-message" class="error-message">
             Please select a valid controller number (1-4).
         </div>
-        <details class="message">
-            <summary>For feedback/suggestions contact me at <a class="linkspan" onclick="openWebsite()">https://unaigonzalez.es</a></summary>
-        </details>
-        <h3>Explanations</h3>
-        <div class="actions">
-            <div class="action-item">
-                <img src="../images/icons/battery_disconnected.png" alt="Battery Disconnected" />
-                <div class="description">Battery Disconnected: The controller is not connected or has no battery.</div>
-            </div>
-            <div class="action-item">
-                <img src="../images/icons/battery_unknown.png" alt="Battery Unknown" />
-                <div class="description">Battery Unknown: The battery status is unknown.</div>
-            </div>
-            <div class="action-item">
-                <img src="../images/icons/battery_wired.png" alt="Battery Wired" />
-                <div class="description">Battery Wired: The controller is connected via USB.</div>
-            </div>
-            <div class="action-item">
-                <img src="../images/icons/controller_invalid.png" alt="Controller Invalid" />
-                <div class="description">Controller Invalid: The selected controller number is invalid or not detected.</div>
-            </div>
-            <div class="action-item">
-                <img src="../images/icons/battery_empty.png" alt="Controller Status" />
-                <div class="description">Controller Battery is empty, charge it!</div>
-            </div>
-            <div class="action-item">
-                <img src="../images/icons/battery_low.png" alt="Controller Status" />
-                <div class="description">Controller Battery is low.</div>
-            </div>
-            <div class="action-item">
-                <img src="../images/icons/battery_medium.png" alt="Controller Status" />
-                <div class="description">Controller Battery is medium.</div>
-            </div>
-            <div class="action-item">
-                <img src="../images/icons/battery_full.png" alt="Controller Status" />
-                <div class="description">Controller Battery is full, time to play!</div>
-            </div>
-
+        <br />
+        <div class="actions" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
+            <a href='https://ko-fi.com/X8X4LBFTT' target='_blank'>
+                <img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi1.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+            </a>
+            <p style="margin:0; font-size:14px; line-height:1.4;">
+                If you enjoy my work and want to support me to keep creating useful tools, buy me a coffee! ☕
+                Your support helps me improve my projects and keep them running.
+            </p>
         </div>
     </div>
     <script src="js/property-inspector.js"></script>

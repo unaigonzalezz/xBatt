@@ -2,6 +2,6 @@
 {
     public class xBattModel
     {
-        public int ControllerNumber { get; set; } = 1; // Default controller is 1
+        public int ControllerNumber { get; set; } = 1;
     }
 }
